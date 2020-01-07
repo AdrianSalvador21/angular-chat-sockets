@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
 })
 export class ChatComponent implements OnInit, OnDestroy {
   text = '';
-  mensajes: any[];
+  mensajes: any[] = [];
   elemento: HTMLElement;
   mensajesSubscription: Subscription;
 
