@@ -1,20 +1,33 @@
-<p>Usuarios conectados</p>
+<p class="m-b-0">Usuarios activos</p>
 <hr>
 
-<ul class="list-group">
+<!-- <ul class="list-group">
   <li class="list-group-item flex-between" *ngFor="let usuario of usuariosActivosObs | async">
     <div>
       {{usuario.nombre}}
       <span class="badge badge-primary">
       {{usuario.sala}}
-    </span>
+      </span>
     </div>
 
     <div>
-      <p class="mb-0">icon</p>
+      <p class="mb-0">
+        <i class="far fa-user" style="font-weight: 800; color: #7a7a7a;"></i>
+      </p>
     </div>
-    <!--<span class="badge badge-info">
+   <span class="badge badge-info">
       {{usuario.id}}
-    </span>-->
+    </span>
   </li>
-</ul>
+</ul> -->
+
+<div class="active-users-container">
+  <div *ngFor="let usuario of usuariosActivosObs | async" class="active-user-container">
+    <div class="active-user">
+      {{usuario.nombre.charAt(0).toUpperCase()}}
+    </div>
+    <span>
+      {{usuario.nombre}}
+    </span>
+  </div>
+</div>

@@ -17,12 +17,10 @@ export class WebsocketService {
 
   checkStatus() {
     this.socket.on('connect', () => {
-      console.log('conectado al servidor');
       this.socketStatus = true;
     });
 
     this.socket.on('disconnect', () => {
-      console.log('desconectado al servidor');
       this.socketStatus = false;
     });
   }

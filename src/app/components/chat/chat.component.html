@@ -1,12 +1,44 @@
-<p>Chat general</p>
-<hr>
 
-<div id="chat-mensajes">
-  <li *ngFor="let msg of mensajes" class="list-group-item">
-    {{msg.de}}: {{msg.cuerpo}}
-  </li>
+
+<div class="container">
+  <p class="m-b-0">Chat</p>
+  <hr>
 </div>
 
-<form (ngSubmit)="sendMessage()">
-  <input type="text" [(ngModel)]="text" class="form-control chat-input" name="texto" placeholder="Mensaje..." autofocus autocomplete="off">
-</form>
+<div id="chat-mensajes">
+
+
+  <!-- wsService.usuario.nombre -->
+  <li *ngFor="let msg of mensajes" class="list-group-item user-message" [ngClass]="{'text-right': wsService.usuario.nombre !== msg.de}">
+    <div class="current-user">
+      <span>{{msg.de.charAt(0).toUpperCase()}}</span>
+    </div>
+
+    <div class="current-message">
+      <span>{{msg.cuerpo}}</span>
+    </div>
+  </li>
+
+
+</div>
+
+<div class="container message-box-container">
+  <form (ngSubmit)="sendMessage()">
+    <div class="chat-input-container">
+      <div class="row w-100">
+        <div class="col-11">
+          <input type="text" [(ngModel)]="text" class="form-control-custom chat-input" name="texto" placeholder="Escribe tu mensaje" autofocus autocomplete="off">
+        </div>
+        <div class="col-1" style="display: flex;
+                                  justify-content: center;
+                                  align-items: center;
+                                  padding: 0 !important;">
+          <div class="custom-button" (click)="sendMessage()">
+            <i class="far fa-angle-right" style="font-weight: 800; color: white;"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

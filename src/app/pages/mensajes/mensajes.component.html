@@ -1,4 +1,5 @@
-<p class="title mt-4">Bienvenido {{wsService.usuario.nombre}}</p>
+<p class="title mt-4" style="font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;">{{wsService.usuario.nombre}}</p>
 
 
 <div class="row">
@@ -6,7 +7,9 @@
     <app-lista-usuarios></app-lista-usuarios>
   </div>
 
-  <div class="col-12 col-md-6 mt-4">
-    <app-chat></app-chat>
+  <div class="col-12 col-md-6 pd-sm-0">
+    <div class="">
+      <app-chat></app-chat>
+    </div>
   </div>
 </div>
